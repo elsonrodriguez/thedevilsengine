@@ -1,0 +1,17 @@
+# Redirect everything to the main site.
+server {
+	server_name <%= wp_domain %>;
+	root /var/www/<%= wp_domain %>;
+
+#	if ($http_host != "<%= wp_domain %>") {
+#		rewrite ^ http://<%= wp_domain %>$request_uri permanent;
+#	}
+
+	include global/restrictions.conf;
+
+
+	include global/wordpress.conf;
+	include /var/www/<%= wp_domain %>/nginx.conf;
+#	include global/wordpress-ms-subdir.conf;
+#	include global/wordpress-ms-subdomain.conf;
+}
