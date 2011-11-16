@@ -1,6 +1,6 @@
 class debian {
 	
-	#this may be a good time for a define	     
+    #this may be a good time for a define	     
     file { 'dotdeb.list': 
     	path   => '/etc/apt/sources.list.d/dotdeb.list',
         source => 'puppet:///modules/debian/dotdeb.list',

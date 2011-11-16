@@ -1,14 +1,14 @@
 class php {
-	package { 'php5-common':
-		ensure   => latest,
-		require => Class['debian'],
+    package { 'php5-common':
+        ensure   => latest,
+        require => Class['debian'],
 	}
 }
 
 class php::fpm inherits php {
-	package { 'php5-fpm':
-		ensure  => latest,
-		require => Class['debian'],
+    package { 'php5-fpm':
+        ensure  => latest,
+        require => Class['debian'],
 	}
     
     file { 'www.conf':
